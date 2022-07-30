@@ -1,51 +1,86 @@
-name: 🚀 Deploy website on push on main
-
+name: 🚀 Deploy website on push
 on: 
-  push: 
+  push:
     branches:
       - main
 jobs:
-  build:
-    name: Build Artifact
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Checkout
-        uses: actions/checkout@v2
-      
-      - name: Installing Dependencies
-        run: npm ci
-
-      - name: Build Project
-        run: npm run build
-
-      - name: Creting Deployment Artifact
-        env: 
-          GITHUB_SHA: ${{ github.sha }}
-        run: tar -czf "${GITHUB_SHA}".tar.gz build
-
-      - name: Storing Artifact
-        uses: actions/upload-artifact@v2
-        with: 
-          name: app-build
-          path: ${{ github.sha }}.tar.gz
-
   web-deploy:
-    name: 🎉 Deploy to Server
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-    needs: build
     steps:
-      - name: Get Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: app-build
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.ftp_host }}
-          username: ${{ secrets.ftp_user }}
-          password: ${{ secrets.ftp_password }}
-          server-dir: txtconverter.dailysimpletools.com/
-          source: ${{ github.sha }}.tar.gz
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+      
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run build
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        sserver: ${{ secrets.ftp_host }}
+        username: ${{ secrets.ftp_user }}
+        password: ${{ secrets.ftp_password }}
+        server-dir: txtconverter.dailysimpletools.com/
+
+
+
+
+
+# name: 🚀 Deploy website on push on main
+
+# on: 
+#   push: 
+#     branches:
+#       - main
+# jobs:
+#   build:
+#     name: Build Artifact
+#     runs-on: ubuntu-latest
+#     steps: 
+#       - name: Checkout
+#         uses: actions/checkout@v2
+      
+#       - name: Installing Dependencies
+#         run: npm ci
+
+#       - name: Build Project
+#         run: npm run build
+
+#       - name: Creting Deployment Artifact
+#         env: 
+#           GITHUB_SHA: ${{ github.sha }}
+#         run: tar -czf "${GITHUB_SHA}".tar.gz build
+
+#       - name: Storing Artifact
+#         uses: actions/upload-artifact@v2
+#         with: 
+#           name: app-build
+#           path: ${{ github.sha }}.tar.gz
+
+#   web-deploy:
+#     name: 🎉 Deploy to Server
+#     runs-on: ubuntu-latest
+#     needs: build
+#     steps:
+#       - name: Get Artifact
+#         uses: actions/download-artifact@v2
+#         with:
+#           name: app-build
+#       - name: 📂 Sync files
+#         uses: SamKirkland/FTP-Deploy-Action@4.3.0
+#         with:
+#           server: ${{ secrets.ftp_host }}
+#           username: ${{ secrets.ftp_user }}
+#           password: ${{ secrets.ftp_password }}
+#           server-dir: txtconverter.dailysimpletools.com/
+#           source: ${{ github.sha }}.tar.gz
 # - name: 🚚 Get latest code
 #   uses: actions/checkout@v2
         
