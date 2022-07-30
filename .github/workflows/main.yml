@@ -28,6 +28,7 @@ jobs:
         username: ${{ secrets.ftp_user }}
         password: ${{ secrets.ftp_password }}
         server-dir: txtconverter.dailysimpletools.com/
+        local-dir: ./build/
 
 
 
