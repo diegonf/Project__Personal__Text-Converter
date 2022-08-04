@@ -1,0 +1,19 @@
+@import 'assets/styles/variaveis';
+@import './assets/menuVars.scss';
+@import 'assets/styles/breakpoints';
+
+.stheader {
+  background: $menuColor;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $mobile) {
+    padding: $menupadding-mobile $hpadding-mobile;
+  }
+  @media (min-width: $mobile) and (max-width: $desktop_sm) {
+    padding: $menupadding-desktop $hpadding-desktop-sm;
+  }
+  @media (min-width: $desktop_sm) {
+    padding: $menupadding-desktop $hpadding-desktop-md;
+  }
+}
