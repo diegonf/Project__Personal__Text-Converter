@@ -1,4 +1,7 @@
 import MenuST from 'components/MenuST/MenuST';
+import TxtConverter from 'components/TxtConverter/TxtConverter';
+import './reset.css';
+import './App.css';
 
 const App = () => {
   const languages = [      //list with the languages available for the website
@@ -14,7 +17,10 @@ const App = () => {
     }
   ];
   return (
-    <MenuST languages={languages} />
+    <>
+      <MenuST languages={languages} />
+      <TxtConverter />
+    </>
   );
 };
 

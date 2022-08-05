@@ -1,0 +1,52 @@
+@import 'assets/styles/variables';
+
+.converter__container {
+  
+  @media (max-width: $mobile) { padding: $vpadding-section-mobile $hpadding-mobile; }
+  @media (min-width: $mobile) and (max-width: $desktop_sm) { padding: $vpadding-section-sm $hpadding-desktop-sm; }
+  @media (min-width: $desktop_sm) { padding: $vpadding-section-md $hpadding-desktop-md; }
+  .converter__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: $btw-elements;
+    text-align: center;
+  }
+  .converter__form {
+    .converter__textarea {
+      background: rgb(247, 252, 255);
+      border: 2px solid black;
+      border-radius: 5px;
+      display: block;
+      margin-bottom: calc($btw-elements + 1rem);
+      outline: none;
+      resize: none;
+      width: 100%;
+      &::placeholder {
+        font-size: 2rem;
+        line-height: 29rem;
+        text-align: center;
+      }
+    }
+    .converter__selectlabel{
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+    .converter__submit {
+      border-radius: 5px;
+      display: block;
+      margin: $btw-elements 0;
+      height: 4rem;
+      font-size: 1.5rem;
+      width: 100%;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+
+
