@@ -33,7 +33,10 @@
       font-size: 1.5rem;
     }
     .converter__submit {
+      background: rgb(0, 94, 255);
+      border: none;
       border-radius: 5px;
+      color: white;
       display: block;
       margin: $btw-elements 0;
       height: 4rem;
