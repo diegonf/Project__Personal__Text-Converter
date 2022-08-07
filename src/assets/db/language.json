@@ -13,7 +13,7 @@
         "options": [
           {"value": "allup", "label": "ALL LETTERS IN UPPERCASE"},
           {"value": "firstletter-word", "label": "First Letter Of Each Word In Uppercase"},
-          {"value": "fistletter-sentence", "label": "First letter of each sentence. Uppercase."},
+          {"value": "firstletter-sentence", "label": "First letter of each sentence. Uppercase."},
           {"value": "alllower", "label": "all letters in lowercase"}
         ],
         "textbutton": "Convert Text"
@@ -32,7 +32,7 @@
         "options": [
           {"value": "allup", "label": "TODAS AS LETRAS MAIÚSCULAS"},
           {"value": "firstletter-word", "label": "Primeira Letra Maiúscula"},
-          {"value": "fistletter-sentence", "label": "Primeira Letra De Cada Frase. Maiúscula."},
+          {"value": "firstletter-sentence", "label": "Primeira Letra De Cada Frase. Maiúscula."},
           {"value": "alllower", "label": "todas as letras minúsculas"}
         ],
         "textbutton": "Converter Texto"
