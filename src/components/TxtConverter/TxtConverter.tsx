@@ -1,18 +1,21 @@
 import styles from './TxtConverter.module.scss';
 import Select from 'react-select';
+import { useSelectedLanguage } from 'assets/state/hooks/useSelectedLanguage';
+import { useState } from 'react';
 
 const TxtConverter = () => {
 
-  const options = [
-    {value: 'allup', label: 'ALL LETTERS IN UPPERCASE'},
-    {value: 'firstletter-word', label: 'First Letter Of Each Word In Uppercase'},
-    {value: 'fistletter-sentence', label: 'First letter of each sentence. Uppercase.'},
-    {value: 'alllower', label: 'all letters in lowercase'}
-  ];
+  const [ textInput, setTextInput ] = useState('');
+  const texts = useSelectedLanguage().texts;
+  const options = texts.options;
+
+  const convertText = () => {
+    // convert text - script
+  };
 
   return (
     <section className={styles.converter__container}>
-      <h1 className={styles.converter__title}>Text Converter - Uppercase/ Lowercase</h1>
+      <h1 className={styles.converter__title}>{texts.tooltitle}</h1>
       <form className={styles.converter__form}>
         <textarea 
           className={styles.converter__textarea}
@@ -20,14 +23,20 @@ const TxtConverter = () => {
           cols={100}
           rows={20}
           id="converterarea" 
-          placeholder="Insert your text here!."
+          placeholder={texts.placeholder}
+          value={textInput}
+          onChange={(event) => setTextInput(event.target.value)}
         ></textarea>
-        <label htmlFor='selectconverter' className={styles.converter__selectlabel}>Select converter option!</label>
+        <label htmlFor='selectconverter' className={styles.converter__selectlabel}>{texts.selecttitle}</label>
         <Select
           id='selectconverter' 
           options={options}
         />
-        <button type="submit"  className={styles.converter__submit}>Convert Text</button>
+        <button 
+          type="submit"  
+          className={styles.converter__submit}
+          onClick={convertText}
+        >{texts.textbutton}</button>
       </form>
     </section>
   );
