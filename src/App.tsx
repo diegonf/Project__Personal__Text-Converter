@@ -2,23 +2,16 @@ import MenuST from 'components/MenuST/MenuST';
 import TxtConverter from 'components/TxtConverter/TxtConverter';
 import './reset.css';
 import './App.css';
+import { useSelectedLanguage } from 'assets/state/hooks/useSelectedLanguage';
 
 const App = () => {
-  const languages = [      //list with the languages available for the website
-    {
-      value: 'pt-br',
-      label: 'Portuguese',
-      image: 'assets/imgs/menu/pt-br.gif'
-    },
-    {
-      value: 'en',
-      label: 'English',
-      image: 'assets/imgs/menu/en.jpg'
-    }
-  ];
+
+  const language = useSelectedLanguage();
+  document.title = `${language.texts.pagetitle} - Simple Tools`;
+
   return (
     <>
-      <MenuST languages={languages} />
+      <MenuST />
       <TxtConverter />
     </>
   );

@@ -1,24 +1,14 @@
 import styles from './Select.module.scss';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef} from 'react';
 import { LanguageOptions } from './LanguageOptions/LanguageOptions';
-import { ILanguage } from '../assets/menuInterfaces';
+import { useSelectedLanguage } from 'assets/state/hooks/useSelectedLanguage';
+import { useMenuStatus } from 'assets/state/hooks/useMenuStatus';
 
-interface Props {
-  languages: ILanguage[]
-}
+const Language = () => {
 
-const Language = (props: Props) => {
-
-  const {languages} = props;
-
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
-  const [statusMenu, setStatusMenu] = useState(false); //True or False for Language Menu to be shown/ not shown
+  const selectedLanguage = useSelectedLanguage();
+  const [statusMenu, setStatusMenu] = useMenuStatus();
   const ref = useRef<HTMLInputElement>(null);
-
-  const selectLanguage = (language: ILanguage) => {
-    setSelectedLanguage(language);
-    setStatusMenu(false);
-  };
   
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => { 
@@ -45,11 +35,7 @@ const Language = (props: Props) => {
           className={styles.weblanguage__img}
         />
       </div>  
-      <LanguageOptions
-        statusMenu={statusMenu}
-        selectLanguage={selectLanguage}
-        languages={languages}
-      />
+      <LanguageOptions />
     </div>
   );
 };

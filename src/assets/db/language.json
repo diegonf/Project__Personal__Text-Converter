@@ -1,0 +1,24 @@
+{
+  "languages": [
+    {
+      "id": 1,
+      "value": "en",
+      "label": "English",
+      "image": "assets/imgs/menu/en.jpg",
+      "texts": {
+        "pagetitle": "Text Converter",
+        "tooltitle": "Text Converter - Uppercase/ Lowercase"
+      }
+    },
+    {
+      "id": 2,
+      "value": "pt-br",
+      "label": "Portuguese Brazil",
+      "image": "assets/imgs/menu/pt-br.gif",
+      "texts": {
+        "pagetitle": "Conversor de Texto",
+        "tooltitle": "Conversor de Textos - Maiúscula/ Minúscula"
+      }
+    }
+  ]
+}

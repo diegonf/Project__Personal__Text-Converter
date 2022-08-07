@@ -1,21 +1,24 @@
 import styles from './LanguageOptions.module.scss';
 import classNames from 'classnames';
-import { ILanguage } from '../../assets/menuInterfaces';
+import { useMenuStatus } from 'assets/state/hooks/useMenuStatus';
+import { useLanguages } from 'assets/state/hooks/useLanguages';
+import { useSetSelectedLanguage } from 'assets/state/hooks/useSetSelectedLanguage';
 
-interface Props {
-  statusMenu: boolean,
-  selectLanguage: (language: ILanguage) => void
-  languages: ILanguage[],
-}
+export function LanguageOptions() {
+  const [menuStatus, setMenuStatus] = useMenuStatus();
+  const setSelectedLanguage = useSetSelectedLanguage();
+  const languages = useLanguages();
 
-export function LanguageOptions(props: Props) {
-  const { statusMenu, selectLanguage, languages } = props;
+  const selectLanguage = (language: typeof languages[0]) => {
+    setSelectedLanguage(language);
+    setMenuStatus(false);
+  };
 
   return (
     <div 
       className={classNames({
         [styles.languageoptions]: true,
-        [styles.languageoptions__statusmenu]: statusMenu
+        [styles.languageoptions__statusmenu]: menuStatus
       })}
     >
       {languages.map(language => (
