@@ -54,6 +54,7 @@ const TxtConverter = () => {
           value={textInput}
           onChange={(event) => setTextInput(event.target.value)}
         ></textarea>
+        <button type='button' className={styles.converter__clearbutton} onClick={() => setTextInput('')}>{texts.clearbutton}</button>
         <label htmlFor='selectconverter' className={styles.converter__selectlabel}>{texts.selecttitle}</label>
         <Select
           className={styles.converter__selectinput}

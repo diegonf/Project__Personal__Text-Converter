@@ -17,7 +17,6 @@
       border: 2px solid black;
       border-radius: 5px;
       display: block;
-      margin-bottom: calc($btw-elements + 1rem);
       outline: none;
       resize: none;
       width: 100%;
@@ -39,9 +38,20 @@
       text-align: center;
       }
     }
+    .converter__clearbutton{
+      background: none;
+      border: none;
+      color: blue;
+      float: right;
+      font-size: $font-size;
+      &:hover{
+        cursor: pointer;
+      }
+    }
     .converter__selectlabel{
       display: block;
       margin-bottom: 0.5rem;
+      margin-top: $btw-elements;
       font-size: $font-size;
     }
     .converter__numberlabel {

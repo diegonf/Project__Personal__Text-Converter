@@ -9,6 +9,7 @@
         "pagetitle": "Text Converter",
         "tooltitle": "Text Converter - Uppercase/ Lowercase",
         "placeholder": "Insert your text here!",
+        "clearbutton": "clear",
         "selecttitle": "Select converter option!",
         "options": [
           {"value": "allup", "label": "ALL LETTERS IN UPPERCASE"},
@@ -32,6 +33,7 @@
         "pagetitle": "Conversor de Texto",
         "tooltitle": "Conversor de Textos - Maiúscula/ Minúscula",
         "placeholder": "Insira seu texto aqui!",
+        "clearbutton": "limpar",
         "selecttitle": "Selecione a opção desejada!",
         "options": [
           {"value": "allup", "label": "TODAS AS LETRAS MAIÚSCULAS"},

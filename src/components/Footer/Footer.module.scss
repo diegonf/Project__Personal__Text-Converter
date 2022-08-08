@@ -11,10 +11,10 @@
   justify-content: space-between;
   height: 5rem;
 
-  .footer__item {
+  .footer__item { 
     color: white;
     font-size: $font-size;
     word-wrap: break-word;
-    @media (max-width: 400px) { width: 9rem }
+    @media (max-width: 400px) { width: 12rem }
   }
 }
