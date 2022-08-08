@@ -13,7 +13,7 @@
 
   .footer__item {
     color: white;
-    font-size: 1rem;
+    font-size: $font-size;
     word-wrap: break-word;
     @media (max-width: 400px) { width: 9rem }
   }

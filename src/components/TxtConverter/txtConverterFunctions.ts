@@ -11,7 +11,7 @@ export const firstLetterWordToUpperCase = (text: string, numCharIgnore: number) 
 };
 
 export const firstLetterSentenceToUpperCase = (text: string) => {
-  const sentences = text.split(/([^A-Za-zÀ-ȕ0-9 ,#%'"-+*/&$@<>ªº°\\]+)/);
+  const sentences = text.split(/([^A-Za-zÀ-ȕ0-9 ,#%'"--“”’+*/&$@<>ªº°\\]+)/);
   const sentencesConverted = sentences.map(sentence => {
     for (let index = 0; index < sentence.length; index++) {
       if (sentence.length === 1) {
