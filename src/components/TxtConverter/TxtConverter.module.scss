@@ -1,7 +1,7 @@
 @import 'assets/styles/variables';
 
 .converter__container {
-  
+  min-height: calc(100vh - 10rem);
   @media (max-width: $mobile) { padding: $vpadding-section-mobile $hpadding-mobile; }
   @media (min-width: $mobile) and (max-width: $desktop_sm) { padding: $vpadding-section-sm $hpadding-desktop-sm; }
   @media (min-width: $desktop_sm) { padding: $vpadding-section-md $hpadding-desktop-md; }

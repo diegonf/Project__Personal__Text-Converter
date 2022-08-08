@@ -3,6 +3,7 @@ import TxtConverter from 'components/TxtConverter/TxtConverter';
 import './reset.css';
 import './App.css';
 import { useSelectedLanguage } from 'assets/state/hooks/useSelectedLanguage';
+import Footer from 'components/Footer/Footer';
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
     <>
       <MenuST />
       <TxtConverter />
+      <Footer />
     </>
   );
 };
