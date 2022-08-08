@@ -23,8 +23,8 @@
       width: 100%;
 
       @media (max-width: $mobile) { 
-        height: 20rem;
-        &::placeholder { line-height: 19rem; }
+        height: 15rem;
+        &::placeholder { line-height: 14rem; }
       }
       @media (min-width: $mobile) and (max-width: $desktop_sm) { 
         height: 25rem;
@@ -54,10 +54,10 @@
       border: 0.3px solid rgb(204, 204, 204);
       border-radius: 5px;
       font-size: 1.3rem;
-      height: 2.2rem;
+      height: 1.8rem;
       margin-right: 0.7rem;
       text-align: center;
-      width: 5rem;
+      width: 3rem;
 
       &:focus{
         outline: 2px solid rgb(98, 116, 255);
