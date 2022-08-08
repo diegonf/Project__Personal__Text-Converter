@@ -21,16 +21,78 @@
       outline: none;
       resize: none;
       width: 100%;
+
+      @media (max-width: $mobile) { 
+        height: 20rem;
+        &::placeholder { line-height: 19rem; }
+      }
+      @media (min-width: $mobile) and (max-width: $desktop_sm) { 
+        height: 25rem;
+        &::placeholder { line-height: 24rem; }
+      }
+      @media (min-width: $desktop_sm) { 
+        height: 30rem;
+        &::placeholder { line-height: 28rem; }
+      }
       &::placeholder {
-        font-size: 2rem;
-        line-height: 29rem;
-        text-align: center;
+      font-size: 2rem;
+      text-align: center;
       }
     }
     .converter__selectlabel{
       display: block;
       margin-bottom: 0.5rem;
-      font-size: 1.5rem;
+      font-size: $font-size;
+    }
+    .converter__numberlabel {
+      display: inline-block;
+      font-size: $font-size;
+      margin-top: $btw-elements;
+      margin-right: 0.7rem;
+    }
+    .converter__numberinput {
+      border: 0.3px solid rgb(204, 204, 204);
+      border-radius: 5px;
+      font-size: 1.3rem;
+      height: 2.2rem;
+      margin-right: 0.7rem;
+      text-align: center;
+      width: 5rem;
+
+      &:focus{
+        outline: 2px solid rgb(98, 116, 255);
+      }
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    } 
+    .converter__numberlabelp {
+      display: inline-block;
+      font-size: $font-size;
+      margin-bottom: $btw-elements;
+    }
+    .converter__wordslabel {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: $font-size;
+    }
+    .converter__wordsinput {
+      border: 0.3px solid rgb(204, 204, 204);
+      border-radius: 5px;
+      font-size: $font-size;
+      height: 3.5rem;
+      width: 100%;
+      &:focus{
+        outline: 2px solid rgb(98, 116, 255);
+      }
+      &::placeholder{
+        padding-left: 1rem;
+      }
     }
     .converter__submit {
       background: rgb(0, 94, 255);

@@ -16,6 +16,10 @@
           {"value": "firstletter-sentence", "label": "First letter of each sentence. Uppercase."},
           {"value": "alllower", "label": "all letters in lowercase"}
         ],
+        "numbercharignore": "Ignore words with less than or equal to:",
+        "numbercharignore2": "characters",
+        "specificcharignore": "Write down words to be the way you'd like them to be in the text:",
+        "specificcharplaceholder": "e.g.: do, for, TNT, ASCII, nTT",
         "textbutton": "Convert Text"
       }
     },
@@ -32,9 +36,13 @@
         "options": [
           {"value": "allup", "label": "TODAS AS LETRAS MAIÚSCULAS"},
           {"value": "firstletter-word", "label": "Primeira Letra Maiúscula"},
-          {"value": "firstletter-sentence", "label": "Primeira Letra De Cada Frase. Maiúscula."},
+          {"value": "firstletter-sentence", "label": "Primeira letra de cada frase. Maiúscula."},
           {"value": "alllower", "label": "todas as letras minúsculas"}
         ],
+        "numbercharignore": "Ignorar palavras com tamanho menor ou igual a:",
+        "numbercharignore2": "caracteres",
+        "specificcharignore": "Escreva abaixo palavras que você queira que seja de uma forma específica no texto:",
+        "specificcharplaceholder": "Ex: de, toda, para, TNT, ASCII, nTT",
         "textbutton": "Converter Texto"
       }
     }
