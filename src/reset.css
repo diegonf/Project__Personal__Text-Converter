@@ -53,7 +53,3 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-:root {
-  touch-action: pan-x pan-y;
-  height: 100% 
-}
