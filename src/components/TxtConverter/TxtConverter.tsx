@@ -83,14 +83,8 @@ const TxtConverter = () => {
             />
             <p className={styles['converter__numtoignore--inputp']}>{texts.numbercharignore2}</p>
           </div>
-
+          <span className={styles.converter__span}>{texts.spannumberignore}</span>
         </div>
-        <span className={classNames({
-          [styles.converter__numspan]: true,
-          [styles.converter__chosenopt]: selectedOption === 'firstletter-word'
-        })}>
-          {texts.spannumberignore}
-        </span>
 
         <label htmlFor="specificchar" className={styles.converter__wordslabel}>{texts.specificcharignore}</label>
         <input
@@ -102,7 +96,7 @@ const TxtConverter = () => {
           onChange={(event) => setWordsToKeep(event.target.value)}
           className={styles.converter__wordsinput}
         />
-        <span className={styles.converter__wordsspan}>{texts.spanspecificignore}</span>
+        <span className={styles.converter__span}>{texts.spanspecificignore}</span>
 
         <button
           type="submit"

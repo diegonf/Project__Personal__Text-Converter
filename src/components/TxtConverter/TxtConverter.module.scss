@@ -55,53 +55,36 @@
       font-size: $font-size;
     }
     .converter__numtoignore{
-      align-items: stretch;
       display: none;
       font-size: $font-size;
       margin-top: $btw-elements;
+      width: 100% ;
       .converter__numtoignore--label {
-        align-items: center;
-        display: flex;
-        margin-right: 0.5rem;
+        display: block;
+        margin-bottom: 0.5rem;
       }
       .converter__numtoignore--inputcontainer {
         align-items: center;
         border: 0.3px solid rgb(204, 204, 204);
         border-radius: 5px;
         display: flex;
-        min-height: 2rem;
+        height: 3.5rem;
+        width: 100%;
         .converter__numtoignore--input {
           border: none;
           border-radius: 5px;
           font-size: $font-size;
           height: 100%;
           text-align: center;
-          width: 3rem;
+          width: 5rem;
           &:focus{
             outline: 2px solid rgb(98, 116, 255);
           }
-          &::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-          &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-        }
-        .converter__numtoignore--inputp {
-          display: inline-block;
-          margin-right: 0.5rem;
         }
       }
     }
-    .converter__numspan {
-      display: none;
-      margin-bottom: $btw-elements;
-      margin-top: 0.3rem;
-    }
     .converter__chosenopt {
-      display: flex;
+      display: inline-block;
     }
     .converter__wordslabel {
       display: block;
@@ -120,9 +103,9 @@
         outline: 2px solid rgb(98, 116, 255);
       }
     }
-    .converter__wordsspan {
+    .converter__span {
       display: block;
-      margin-bottom: $btw-elements;
+      font-size: 1rem;
       margin-top: 0.3rem;
     }
     .converter__submit {
