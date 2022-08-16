@@ -58,6 +58,7 @@ const TxtConverter = () => {
         <button type='button' className={styles.converter__clearbutton} onClick={() => setTextInput('')}>{texts.clearbutton}</button>
         <label htmlFor='selectconverter' className={styles.converter__selectlabel}>{texts.selecttitle}</label>
         <Select
+          isSearchable={false}
           className={styles.converter__selectinput}
           id='selectconverter'
           placeholder="Select Option"
