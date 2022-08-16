@@ -17,10 +17,13 @@ export const firstLetterSentenceToUpperCase = (text: string) => {
       if (sentence.length === 1) {
         return sentence.charAt(0).toUpperCase();
       }
-      if (sentence.charAt(index) != ' ') {
+      const regex = new RegExp('[^A-Za-zÀ-ȕ]+');
+      const regexTest = regex.test(sentence.charAt(index));
+      if (!regexTest) {
         return sentence.slice(0, index) + sentence.charAt(index).toUpperCase() + sentence.slice(index + 1);
       }
     }
+    return sentence;
   });
   return sentencesConverted.join('');
 };

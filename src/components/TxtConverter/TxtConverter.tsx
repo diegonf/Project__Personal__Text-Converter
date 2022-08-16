@@ -1,8 +1,9 @@
 import styles from './TxtConverter.module.scss';
 import Select, { SingleValue } from 'react-select';
 import { useSelectedLanguage } from 'assets/state/hooks/useSelectedLanguage';
-import { useState } from 'react'; 
+import { useState } from 'react';
 import { firstLetterSentenceToUpperCase, firstLetterWordToUpperCase, keepWordsByUser } from './txtConverterFunctions';
+import classNames from 'classnames';
 
 const TxtConverter = () => {
   //language
@@ -15,8 +16,8 @@ const TxtConverter = () => {
   const [numCharIgnore, setNumCharIgnore] = useState(0);
   const [wordsToKeep, setWordsToKeep] = useState('');
 
-  const handleSelectedOption = (opt: SingleValue<{value: string; label: string;}>) => {
-    if(opt) setSelectedOption(opt.value);
+  const handleSelectedOption = (opt: SingleValue<{ value: string; label: string; }>) => {
+    if (opt) setSelectedOption(opt.value);
   };
 
   const convertText = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -24,10 +25,10 @@ const TxtConverter = () => {
     textInputLower = textInput.toLowerCase();
 
     if (selectedOption == 'alllower') {
-      setTextInput(textInput.toLowerCase());
+      setTextInput(keepWordsByUser(textInputLower, wordsToKeep));
     }
     if (selectedOption == 'allup') {
-      setTextInput(textInput.toUpperCase());
+      setTextInput(keepWordsByUser(textInput.toUpperCase(), wordsToKeep));
     }
     if (selectedOption == 'firstletter-word') {
       const textFirstLetterWordUpdated = firstLetterWordToUpperCase(textInputLower, numCharIgnore);
@@ -65,27 +66,43 @@ const TxtConverter = () => {
           onChange={handleSelectedOption}
         />
 
-        <label htmlFor="numchar" className={styles.converter__numberlabel}>{texts.numbercharignore}</label>
-        <input 
-          type="number" 
-          name='numchar' 
-          id='numchar'
-          value={numCharIgnore}
-          onChange={(event) => setNumCharIgnore(parseInt(event.target.value))}
-          className={styles.converter__numberinput}
-        />
-        <p className={styles.converter__numberlabelp}>{texts.numbercharignore2}</p>
+        <div className={classNames({
+          [styles.converter__numtoignore]: true,
+          [styles.converter__chosenopt]: selectedOption === 'firstletter-word'
+        })}>
+          <label htmlFor="numchar" className={styles['converter__numtoignore--label']}>{texts.numbercharignore}</label>
+          <div className={styles['converter__numtoignore--inputcontainer']}>
+            <input
+              disabled={selectedOption != 'firstletter-word'}
+              type="number"
+              name='numchar'
+              id='numchar'
+              value={numCharIgnore}
+              onChange={(event) => setNumCharIgnore(parseInt(event.target.value))}
+              className={styles['converter__numtoignore--input']}
+            />
+            <p className={styles['converter__numtoignore--inputp']}>{texts.numbercharignore2}</p>
+          </div>
+
+        </div>
+        <span className={classNames({
+          [styles.converter__numspan]: true,
+          [styles.converter__chosenopt]: selectedOption === 'firstletter-word'
+        })}>
+          {texts.spannumberignore}
+        </span>
 
         <label htmlFor="specificchar" className={styles.converter__wordslabel}>{texts.specificcharignore}</label>
-        <input 
-          type="text" 
-          name='specificchar' 
-          id='specificchar' 
+        <input
+          type="text"
+          name='specificchar'
+          id='specificchar'
           placeholder={texts.specificcharplaceholder}
           value={wordsToKeep}
           onChange={(event) => setWordsToKeep(event.target.value)}
           className={styles.converter__wordsinput}
         />
+        <span className={styles.converter__wordsspan}>{texts.spanspecificignore}</span>
 
         <button
           type="submit"

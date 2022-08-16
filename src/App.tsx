@@ -9,6 +9,7 @@ const App = () => {
 
   const language = useSelectedLanguage();
   document.title = `${language.texts.pagetitle} - Simple Tools`;
+  document.documentElement.setAttribute('lang', language.value);
 
   return (
     <>

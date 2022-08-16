@@ -18,9 +18,11 @@
           {"value": "alllower", "label": "all letters in lowercase"}
         ],
         "numbercharignore": "Ignore words with less than or equal to:",
-        "numbercharignore2": "characters",
-        "specificcharignore": "Write down words to be the way you'd like them to be in the text:",
+        "numbercharignore2": "characters.",
+        "spannumberignore": "Applied only to option 'First Letter Of Each Word In Uppercase'.",
+        "specificcharignore": "Personalized words:",
         "specificcharplaceholder": "e.g.: do, for, TNT, ASCII, nTT",
+        "spanspecificignore": "Write down words with uppercase and lowercase letters exactly the way you want them to be in the text. For example the word 'tNT', write it this way here and it will also be 'tNT' in the converted text.",
         "textbutton": "Convert Text"
       }
     },
@@ -42,9 +44,11 @@
           {"value": "alllower", "label": "todas as letras minúsculas"}
         ],
         "numbercharignore": "Ignorar palavras com tamanho menor ou igual a:",
-        "numbercharignore2": "caracteres",
-        "specificcharignore": "Escreva abaixo palavras que você queira que seja de uma forma específica no texto:",
+        "numbercharignore2": "caracteres.",
+        "spannumberignore": "Valido somente para a opção 'Primeira Letra Maiúscula'.",
+        "specificcharignore": "Palavras Personalizadas:",
         "specificcharplaceholder": "Ex: de, toda, para, TNT, ASCII, nTT",
+        "spanspecificignore": "Escreva abaixo palavras com letras maiúsculas e minúsculas exatamente como você deseja que elas estejam no texto. Ex: a palavra 'tNT', se escrita assim aqui, ela aparecerá como 'tNT' no texto convertido.",
         "textbutton": "Converter Texto"
       }
     }

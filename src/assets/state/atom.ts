@@ -7,9 +7,17 @@ export const languagesAtom = atom<typeof languageDB> ({
   default: languageDB
 });
 
+const selectedLanguageLS=localStorage.getItem('selectedLanguage');
+let selectedLanguage;
+if (selectedLanguageLS) {
+  selectedLanguage = JSON.parse(selectedLanguageLS);
+} else {
+  selectedLanguage = languageDB[0];
+  localStorage.setItem('selectedLanguage', JSON.stringify(languageDB[0]));
+}
 export const selectedLanguageAtom = atom<typeof languageDB[0]> ({
   key: 'selectedLanguageAtom',
-  default: languageDB[0]
+  default: selectedLanguage
 });
 
 export const menuStatusAtom = atom<boolean> ({

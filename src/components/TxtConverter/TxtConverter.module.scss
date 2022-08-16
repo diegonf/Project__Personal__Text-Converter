@@ -26,12 +26,12 @@
         &::placeholder { line-height: 14rem; }
       }
       @media (min-width: $mobile) and (max-width: $desktop_sm) { 
-        height: 25rem;
-        &::placeholder { line-height: 24rem; }
+        height: 22rem;
+        &::placeholder { line-height: 21rem; }
       }
       @media (min-width: $desktop_sm) { 
-        height: 30rem;
-        &::placeholder { line-height: 28rem; }
+        height: 25rem;
+        &::placeholder { line-height: 24rem; }
       }
       &::placeholder {
       font-size: 2rem;
@@ -54,41 +54,59 @@
       margin-top: $btw-elements;
       font-size: $font-size;
     }
-    .converter__numberlabel {
-      display: inline-block;
+    .converter__numtoignore{
+      align-items: stretch;
+      display: none;
       font-size: $font-size;
       margin-top: $btw-elements;
-      margin-right: 0.7rem;
+      .converter__numtoignore--label {
+        align-items: center;
+        display: flex;
+        margin-right: 0.5rem;
+      }
+      .converter__numtoignore--inputcontainer {
+        align-items: center;
+        border: 0.3px solid rgb(204, 204, 204);
+        border-radius: 5px;
+        display: flex;
+        min-height: 2rem;
+        .converter__numtoignore--input {
+          border: none;
+          border-radius: 5px;
+          font-size: $font-size;
+          height: 100%;
+          text-align: center;
+          width: 3rem;
+          &:focus{
+            outline: 2px solid rgb(98, 116, 255);
+          }
+          &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+        .converter__numtoignore--inputp {
+          display: inline-block;
+          margin-right: 0.5rem;
+        }
+      }
     }
-    .converter__numberinput {
-      border: 0.3px solid rgb(204, 204, 204);
-      border-radius: 5px;
-      font-size: 1.3rem;
-      height: 1.8rem;
-      margin-right: 0.7rem;
-      text-align: center;
-      width: 3rem;
-
-      &:focus{
-        outline: 2px solid rgb(98, 116, 255);
-      }
-      &::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-    } 
-    .converter__numberlabelp {
-      display: inline-block;
-      font-size: $font-size;
+    .converter__numspan {
+      display: none;
       margin-bottom: $btw-elements;
+      margin-top: 0.3rem;
+    }
+    .converter__chosenopt {
+      display: flex;
     }
     .converter__wordslabel {
       display: block;
       margin-bottom: 0.5rem;
+      margin-top: $btw-elements;
       font-size: $font-size;
     }
     .converter__wordsinput {
@@ -96,13 +114,16 @@
       border-radius: 5px;
       font-size: $font-size;
       height: 3.5rem;
+      padding-left: 1rem;
       width: 100%;
       &:focus{
         outline: 2px solid rgb(98, 116, 255);
       }
-      &::placeholder{
-        padding-left: 1rem;
-      }
+    }
+    .converter__wordsspan {
+      display: block;
+      margin-bottom: $btw-elements;
+      margin-top: 0.3rem;
     }
     .converter__submit {
       background: rgb(0, 94, 255);
