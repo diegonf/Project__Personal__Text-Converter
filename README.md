@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+## <p align="center">![Text Converter Tool](./readme_img.PNG)<br>Text Converter Tool</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+* Projeto Publicado: https://txtconverter.dailysimpletools.com
 
-In the project directory, you can run:
+## Descrição do projeto
+Text converter é um conversor de textos para letras maiúsculas ou minúsculas de acorde com a opção desejada pelo usuário. O objetivo de desenvolver esse projeto foi praticar o desenvolvimento com React, utilizando gerenciamento de estado para os componentes utilizados. Nesse projeto, mative todos os textos utilizados no HTML em um arquivo JSON, assim pude estruturar os dados e já deixá-los traduzidos para o inglês. Com o gerenciamento de estados com Recoil, fiz a opção no menu de linguagem (bandeira do Brasil para pt_br e dos EUA para en) para o usuário escolher. Com a escolha, o site já altera de forma dinâmica todos os textos da página.
 
-### `npm start`
+## Funcionalidades
+* Conversor de texto para maiúsculas ou minúculas com quatro opções principais;
+  * Converter todo texto para maiúscula;
+  * Converter todo texto para minúscula;
+  * Converter primeira letra de cada palavra para maiúscula;
+  * Converter primeira letra de cada frase para maiúscula;
+* Disponibilizar duas opções de personalização;
+  * Ignorar palavras de tamanho específico e menores (para função de primeira letra de cada palavra maiúscula);
+  * Ignorar (manter o padrão) de palavras específicas digitadas pelo usuário no ultimo campo de input;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Ferramentas utilizadas
+* Vercel para publicar projeto;
+* Recoil para gerenciamento de estados;
+* ESLint para padronização do código;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tecnologias utilizadas
+* ![ReactJS](https://img.shields.io/badge/-ReactJS-black?style=flat-square&logo=react)
+* ![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Autores
+| [<img src="https://avatars.githubusercontent.com/u/97759524?v=4" width=115><br><sub>Diego Ferreira</sub>](https://github.com/diegonf) | 
+| :---: |
