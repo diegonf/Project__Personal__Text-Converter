@@ -1,11 +1,11 @@
-name: 🚀 Deploy to Firebase on push
+name: 🚀 Deploy on push
 on: 
   push:
     branches:
       - main
 jobs:
   web-deploy:
-    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+    name: 🎉 Deploy to Firebase
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
